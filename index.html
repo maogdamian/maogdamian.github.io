@@ -1,64 +1,139 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Damian Bennett Bio</title>
+<html lang="en">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
 
-  <!-- main header -->
-  <header>
-    <h1>Damian Bennett</h1>
-  </header>
+		<title>Overwatch Hangman</title>
+	</head>
 
-  <div id="nav-bar">
-    <nav>
-        <a href="index.html">About</a> |
-        <a href="portfolio.html">Portfolio</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
-  </div>
+	<body id ="body" class = "modal-open">
+		<nav id="navbar" class="navbar navbar-default navbar-inverse">
+				<div class="container">
+					<div class="navbar-header">
+			      		<h1 class="navbar-brand">OverWatch Hangman</j1>
+					</div>
+					
+					</div>
+				</div>
+			</nav>
 
-  <!-- Main Bio Div -->
-  <div class="container">
 
-    <div id="main-bio">
-      <section id="title">
-      <h1>About Me</h1>
-      </section>
 
-      <section class="bio-image">
-        <img src="assets/images/profilepic.gif" alt="Damian" class="bio-image" width="250" height="250"></section>
+			<!-- Win Modal -->
+			<div id="modal" class="modal text-center">
+	
+			</div>
 
-        <p> This is going to be a bunch of sentences here making a paragraph.</p>
 
-        <p> I'm not really sure what to say about myself.</p>
+			<!-- Intro Modal -->
+			<div id="intro-modal" class = "modal text-center">
+				<h1 id="modal-title">Hangman</h1>
 
-        <p> I should probably have a few different divisions.</p>
-  
-    </div>
+				<audio id="match-begin">
+					  <source src="assets/sounds/matchBegin.mp3" type="audio/mpeg">
+				</audio loop>
+				<div><button id="new-game-1" class = "new-game btn btn-default" onclick="startGame()">New Game</button></div>
+			</div>
 
-    <!-- Side Bar Div-->
-    <div class="connect-box">
-      <h3> Connect with Me </h3>
-        <ul>
-        <li><a href="https://github.com/maogdamian"><img src="assets/images/github.png" alt="Github" class="connect"></a></li>
+			<!-- MAIN CONTAINER-->
+ 
+			<div class="container" id = "content-container">
 
-        <li><a href="https://www.linkedin.com/in/damian-bennett-1577682a"><img src="assets/images/linkedin.png" alt="Linkedin" class="connect"></a></li>
+				<div class= "row row-centered">
 
-        <li><a href="https://stackoverflow.com/users/9157411/damian-bennett"><img src="assets/images/stackoverflow.png" alt="Overflow" class="connect"></a></li>
-        </ul>
-    </div>
-  </div>
+					<div class="col-md-12 text-center banner col-centered">
+						<img class="img-responsive banner-img thumbnail" src="assets/images/overwatch_logo.png">
 
-    <!-- Footer -->
-    <footer>
-        <p> &copy; Copyright 2018 Damian Bennett </p>
-      
-    </footer>
+					</div>
+				</div>
 
-</body>
+				<div class="row text-center">
+					<div class="col-md-12 text-center">
+
+						<div>
+ 
+							<h2 class="guessed-letters"></h2>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="row row-centered text-center" id="guess-display">
+					<div class="col-xs-3 col-sm-3"></div><!--Empty column -->
+						<!-- Misses go here -->
+
+					<div class="col-xs-1 col-sm-1 misses-col text-center">
+						<div id="missesOne" class="misses"></div>
+					</div>
+
+					<div class="col-xs-1 col-sm-1 misses-col text-center">
+						<div id="missesTwo" class="misses"></div>
+
+					</div>
+
+					<div class="col-xs-1 col-sm-1 misses-col text-center">
+						<div id="missesThree" class="misses"></div>
+
+					</div>
+
+					<div class="col-xs-1 col-sm-1 misses-col text-center">
+						<div id="missesFour" class="misses"></div>
+					</div>
+
+					<div class="col-xs-1 col-sm-1 text-center misses-col">
+						<div id="missesFive" class="misses"></div>
+					</div>
+
+					<div class="col-xs-1 col-sm-1 text-center misses-col">
+						<div id="missesSix" class="misses"></div>
+					</div>
+
+					<div class="col-xs-3 col-sm-3 text-center"></div><!--Empty column -->
+
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="page-header">
+							<h1 class="puzzle"></h1>
+						</div>
+
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div>
+							<h2 class="wins"> </h2>
+						</div>
+					</div>
+				</div>
+
+			
+				
+						<button id="new-game-2" class = "new-game btn btn-default" onclick="startGame()">New Game</button>
+					
+					</div>
+				</div>			
+			</div>
+
+
+			<!--FOOTER-->
+			<nav id="footer" class="navbar navbar-default navbar-inverse">
+				<div class="container text-center">
+					<p class ="footer-motto hvr-underline-from-left"> </p>
+					<h5><b>	</b></h5>
+				</div>
+			</nav>
+		
+		
+		
+		<script src="assets/javascript/game.js"></script>
+	</body>
+
 </html>
