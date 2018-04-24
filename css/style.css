@@ -1,28 +1,3 @@
-@charset "UTF-8";
-/*------------------------------------------------------------------
-[Master Stylesheet]
-Project:	Matresume
-++++ Imports ++++
-++++ Reset ++++
-++++ Main ++++
-	1)Header
-	2)about
-	3)Hero BG
-	4)Skills Sec
-	5)Profile Sec
-	6)Portfolio Sec
-	7)Interest Sec
-	8)Timeline
-	9)Blog Sec
-	10)Reference Sec
-	11)Client Sec
-	12)Pricing Sec
-	13)contact Sec
-	14)Footer Sec
-	15)Navigation Sec
-	16)Blog & Project Deatail Pages
-++++ Mediaqueries ++++
--------------------------------------------------------------------*/
 /****************************/
 /** Imports **/
 /****************************/
@@ -1840,11 +1815,11 @@ blockquote {
   background-size: cover !important;
   background-position: center !important; }
 .blog-detail .item:nth-child(1), .project-detail .item:nth-child(1) {
-  background: url(../img/gallery1.jpg); }
+  background: url(../img/overwatch.png); }
 .blog-detail .item:nth-child(2), .project-detail .item:nth-child(2) {
-  background: url(../img/gallery2.jpg); }
+  background: url(../img/rpg.png); }
 .blog-detail .item:nth-child(3), .project-detail .item:nth-child(3) {
-  background: url(../img/gallery3.jpg); }
+  background: url(../img/trivia.png); }
 
 .project-detail .carousel,
 .project-detail .carousel-inner,
@@ -1853,9 +1828,9 @@ blockquote {
 .project-detail .item:nth-child(1) {
   background: url(../img/gallery4.jpg); }
 .project-detail .item:nth-child(2) {
-  background: url(../img/gallery5.jpg); }
+  background: url(../img/rps.png); }
 .project-detail .item:nth-child(3) {
-  background: url(../img/gallery6.jpg); }
+  background: url(../img/lyme.png); }
 
 /****************************/
 /** Mediaqueries **/
